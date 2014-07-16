@@ -1,0 +1,96 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+<div class="page">
+
+    <h2>getCurrentPosition()</h2>
+    <div class="description">Returns the device's current position as a Position object.</div>
+    <hr/>
+
+    <pre class="prettyprint">navigator.geolocation.getCurrentPosition(
+                    successHandler,
+                    errorHandler,
+                    {   enableHighAccuracy: <span class="nocode"><select id="slAccuracy1" style="width:80px"><option value="true">true</option><option value="false" selected>false</option></select></span>,
+                        timeout:            <span class="nocode"><select id="slTimeout1" style="width:80px"><option value="10000">10000</option><option value="20000" selected>20000</option><option value="30000">30000</option><option value="60000">60000</option></select></span>,
+                        maximumAge:         <span class="nocode"><select id="slMaxAge1" style="width:80px"><option value="10000">100000</option><option value="60000">60000</option><option value="600000" selected>60000</option><option value="600000">600000</option></select></span>
+                    });</pre>
+
+    <a href='#' class='btn btn-large getBtn'>Invoke Now</a>
+    <br/>
+    <br/>
+
+    <legend>successHandler(position)</legend>
+
+    <table class="table table-bordered table-striped">
+        <tr><td width="50%">position.coords.latitude</td><td id="latitude1"></td></tr>
+        <tr><td>position.coords.longitude</td><td id="longitude1"></td></tr>
+        <tr><td>position.coords.altitude</td><td id="altitude1"></td></tr>
+        <tr><td>position.coords.accuracy</td><td id="accuracy1"></td></tr>
+        <tr><td>position.coords.altitudeAccuracy</td><td id="altitudeAccuracy1"></td></tr>
+        <tr><td>position.coords.heading</td><td id="heading1"></td></tr>
+        <tr><td>position.coords.speed</td><td id="speed1"></td></tr>
+        <tr><td>position.timestamp</td><td id="timestamp1"></td></tr>
+    </table>
+
+</div>
+
+<div class="page">
+
+    <h2>watchPosition()</h2>
+    <div class="description">Watches for changes to the device's current position.</div>
+    <hr/>
+
+    <pre class="prettyprint">navigator.geolocation.watchPosition(
+                    successHandler,
+                    errorHandler,
+                    {   enableHighAccuracy: <span class="nocode"><select id="slAccuracy2" style="width:80px"><option value="true">true</option><option value="false" selected>false</option></select></span>,
+                        timeout:            <span class="nocode"><select id="slTimeout2" style="width:80px"><option value="10000">10000</option><option value="20000" selected>20000</option><option value="30000">30000</option><option value="60000">60000</option></select></span>,
+                        maximumAge:         <span class="nocode"><select id="slMaxAge2" style="width:80px"><option value="10000">100000</option><option value="60000">60000</option><option value="600000" selected>60000</option><option value="600000">600000</option></select></span>
+                    });</pre>
+
+    <a href='#' class='btn btn-large watchBtn'>Invoke Now</a>&nbsp;&nbsp;&nbsp;<span class="label label-info">watchId: <span id="watchId1">undefined</span></span>
+    <br/>
+    <br/>
+
+    <legend>successHandler(position)</legend>
+    <table class="table table-bordered table-striped">
+        <tr><td width="50%">position.coords.latitude</td><td id="latitude2"></td></tr>
+        <tr><td>position.coords.longitude</td><td id="longitude2"></td></tr>
+        <tr><td>position.coords.altitude</td><td id="altitude2"></td></tr>
+        <tr><td>position.coords.accuracy</td><td id="accuracy2"></td></tr>
+        <tr><td>position.coords.altitudeAccuracy</td><td id="altitudeAccuracy2"></td></tr>
+        <tr><td>position.coords.heading</td><td id="heading2"></td></tr>
+        <tr><td>position.coords.speed</td><td id="speed2"></td></tr>
+        <tr><td>position.timestamp</td><td id="timestamp2"></td></tr>
+    </table>
+
+</div>
+
+<div class="page">
+
+    <h2>clearWatch()</h2>
+    <div class="description">Stop watching for changes to the device's location referenced by the watchId parameter.</div>
+    <hr/>
+
+    <pre class="prettyprint">navigator.geolocation.clearWatch(
+        <span id="watchId2">undefined</span>);</pre>
+
+    <a href='#' class='btn btn-large clearBtn'>Invoke Now</a>
+
+</div>
+
+<div class="page">
+
+    <h2>Google Maps</h2>
+    <div class="description">Using geolocation with Google Maps.</div>
+    <hr/>
+
+    <div id="map_canvas" class="noscroll" style="width:690px; height:490px;"></div>
+    <br/>
+
+    <a href='#' class='btn btn-large googleBtn'>getCurrentPosition()</a>
+
+</div>
+
+</div>
+</div>

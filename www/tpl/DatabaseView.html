@@ -1,0 +1,101 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+<div class="page">
+
+    <h2>database.transaction()</h2>
+    <div class="description">Runs a database transaction.</div>
+    <hr/>
+
+<pre class="prettyprint">db = window.openDatabase("mydb", "1.0", "My Database", 1000000);
+db.transaction(txHandler, txErrorHandler, txSuccessHandler);
+
+function txHandler(tx) {
+    tx.executeSql("DROP TABLE IF EXISTS state");
+    tx.executeSql("CREATE TABLE state (id,name)");
+    tx.executeSql("INSERT INTO state (id,name) VALUES ('ME','Maine')");
+    tx.executeSql("INSERT INTO state (id,name) VALUES ('OH','OHIO')");
+}
+
+function txErrorHandler() {
+    console.log('Transaction failed.\nsqlError.code: ' + error.code +
+                    '\nsqlError.message: ' + error.message);
+}
+
+function txSuccessHandler() {
+    console.log('Transaction succeeded');
+}</pre>
+
+<a href='#' class='btn btn-large txBtn'>Invoke Now</a>
+<br/>
+<br/>
+
+<legend>log</legend>
+    <div class="logWrapper" style="height:90px;">
+        <div id="log1" class="log"></div>
+    </div>
+</div>
+
+<div class="page">
+
+    <h2>sqlTransaction.executeSql()</h2>
+    <div class="description">Executes a SQL statement.</div>
+    <hr/>
+
+<pre class="prettyprint">db = window.openDatabase("mydb", "1.0", "My Database", 1000000);
+db.transaction(txHandler, txErrorHandler, txSuccessHandler);
+
+function txHandler(tx) {
+    tx.executeSql(
+        "<span class="nocode"><input id="stmt1" type="text" placeholder="SQL Statement" style="width:450px;" value="INSERT INTO state (id, name) VALUES (?, ?)"/></span>",
+        [<span class="nocode"><input id="params1" type="text" placeholder="Parameters" style="width:450px;" value="'CA', 'California'"/></span>],
+        stmtSuccessHandler, stmtErrorHandler);
+}</pre>
+<a href='#' class='btn btn-large execBtn'>Invoke Now</a>
+<br/>
+<br/>
+
+<legend>stmtSuccessHandler(sqlResultSet)</legend>
+
+<div class="logWrapper">
+    <div id="log2" class="log"></div>
+</div>
+
+
+</div>
+
+<div class="page">
+
+    <h2>SQLResultSetList</h2>
+    <div class="description">Wraps a database result set made of multiple rows.</div>
+    <hr/>
+
+<pre class="prettyprint">db.transaction(txHandler, txErrorHandler, txSuccessHandler);
+
+function txHandler(tx) {
+    tx.executeSql("<span class="nocode"><input id="stmt2" type="text" placeholder="SQL Statement" style="width:400px;" value="SELECT * FROM state"/></span>",
+        stmtSuccessHandler, stmtErrorHandler);
+}
+
+function stmtSuccessHandler(tx, results) {
+    for (var i=0; i < results.rows.length; i++) {
+        var row = results.rows.item(i);
+        for (var col in row) {
+            console.log(col + ": " + row[col]);
+        }
+    }
+}</pre>
+
+<a href='#' class='btn btn-large rsBtn'>Invoke Now</a>
+<br/>
+<br/>
+
+<legend>log</legend>
+<div id="rowWrapper" class="wrapper noscroll" style="position:absolute;top:530px; left:20px; bottom: 40px; right:20px; border: solid 1px #F0F0F0; border-radius: 4px; overflow: hidden">
+    <div id="log3" class="log"></div>
+</div>
+
+</div>
+
+</div>
+</div>

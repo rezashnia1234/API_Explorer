@@ -1,0 +1,50 @@
+<div id="pageWrapper" class="page-wrapper">
+
+<div class="slider">
+
+    <div class="page">
+        <h2>captureAudio()</h2>
+        <div class='description'>Start the audio recorder app and return information about the captured audio clip.</div>
+        <hr/>
+
+        <pre class="prettyprint">
+navigator.device.capture.captureAudio(
+            successHandler,
+            errorHandler,
+            {
+                duration: <span class="nocode"><select id="duration" style="width:80px"><option value="10">10</option><option value="30" selected>30</option><option value="60">60</option><option value="120">120</option><option value="300">300</option></select></span>
+            });</pre>
+
+        <a href='#' class='btn btn-large audioBtn'>Invoke Now</a>
+        <br/><br/><br/><br/>
+        <audio id="capturedAudio" style="width:400px"></audio>
+    </div>
+
+    <div class="page">
+        <h2>captureImage()</h2>
+        <div class='description'>Start the camera app and return information about the captured image file.</div>
+        <hr/>
+        <pre class="prettyprint">
+navigator.device.capture.captureImage(
+            successHandler,
+            errorHandler);</pre>
+        <a href='#' class='btn btn-large imgBtn'>Invoke Now</a>
+        <br/><br/>
+        <img id="capturedImage" height="420" />
+    </div>
+
+    <div class="page">
+        <h2>captureVideo()</h2>
+        <div class='description'>Start the video recorder app and return information about the captured video clip file.</div>
+        <hr/>
+        <pre class="prettyprint">
+navigator.device.capture.captureVideo(
+            successHandler,
+            errorHandler);</pre>
+        <a href='#' class='btn btn-large videoBtn'>Invoke Now</a>
+        <br/><br/>
+        <video id="capturedVideo" width="552" height="414" controls></video>
+    </div>
+
+</div>
+</div>

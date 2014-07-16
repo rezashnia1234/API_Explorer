@@ -1,0 +1,87 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+<div class="page">
+
+    <h2>FileReader.readAsText()</h2>
+    <div class="description">Read a text file.</div>
+    <hr/>
+
+    <pre class="prettyprint">window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+    fsSuccess, fsError);
+
+function fsSuccess(fs) {
+    fs.root.getFile("readme.txt", {create: false, exclusive: false},
+        this.getFileSuccess, this.getFileError);
+}
+
+function getFileSuccess(file) {
+    var reader = new FileReader();
+    reader.onload = function(event) {
+        console.log(event.target.result);
+    };
+    reader.onerror = function(event) {
+        alert('Error loading file');
+    };
+    reader.readAsText(file);
+}
+    </pre>
+
+    <a href='#' class='btn btn-large readBtn'>Invoke Now</a>
+    <br/>
+    <br/>
+    <textarea id="readFileArea" style="width:100%;height:130px;"></textarea>
+
+</div>
+
+<div class="page">
+
+    <h2>FileWriter.write()</h2>
+    <div class="description">Writes data to the file with a UTF-8 encoding.</div>
+    <hr style="margin: 10px 0px"/>
+
+    <textarea id="writeFileArea" class="noscroll" style="width:100%;height:80px;"></textarea>
+
+    <pre class="prettyprint">window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+    fsSuccess, fsError);
+
+function fsSuccess(fs) {
+    fs.root.getFile("readme.txt", {create: true, exclusive: false},
+        this.getFileSuccess, this.getFileError);
+}
+
+function getFileSuccess(file) {
+    file.createWriter(
+        function(writer) {
+            writer.onwrite = function(event) {
+                console.log("File saved");
+            };
+            writer.onerror = function(event) {
+                console.log("write() failed");
+            };
+            writer.write(str);
+        },
+        function() {
+            console.log('createWriter() failed');
+        }
+    );
+}</pre>
+
+<a href='#' class='btn btn-large writeBtn'>Invoke Now</a>
+
+</div>
+
+</div>
+</div>
+
+
+<!--<a href="#doc/File" class="btn pull-right" style="font-size: 13px;"><i class="icon-bookmark"></i>&nbsp;API</a>-->
+
+<!--<div class="page-header">-->
+    <!--<h1>File</h1>-->
+<!--</div>-->
+
+<!--<form class="form-inline">-->
+    <!--File Name: <input id="fileName" type="text" value="readme.txt"/> <button class="btn btn-large loadBtn">Load</button> <button class="btn btn-large saveBtn">Save As</button><br/>-->
+<!--</form>-->
+<!--<textarea id="fileContent" style="width:99%;height:350px;"></textarea>-->

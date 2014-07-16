@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+    <script src="lib/prettify.js"></script>
+
+</head>
+
+<body onload="prettyPrint()">
+
+<button onclick="addStuff()">Add Stuff</button>
+
+<div id="content"></div>
+
+
+<script src="lib/cordova-1.9.0.js"></script>
+<script src="lib/jquery-1.7.2.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<script src="lib/iscroll.js"></script>
+<script src="lib/twis.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmMR8OYLclNRNyYntpC0RUAekx7k0nwj8&sensor=true"></script>
+
+<script src="js/utils.js"></script>
+<script src="js/models/models.js"></script>
+<!--<script src="js/views/header.js"></script>-->
+<script src="js/views/APIListView.js"></script>
+<script src="js/views/GeolocationView.js"></script>
+<script src="js/views/AccelerometerView.js"></script>
+<script src="js/views/CameraView.js"></script>
+<script src="js/views/DeviceView.js"></script>
+<script src="js/views/CaptureView.js"></script>
+<script src="js/views/CompassView.js"></script>
+<script src="js/views/ConnectionView.js"></script>
+<script src="js/views/ContactView.js"></script>
+<script src="js/views/EventsView.js"></script>
+<script src="js/views/NotificationView.js"></script>
+<script src="js/views/DatabaseView.js"></script>
+<script src="js/views/FileView.js"></script>
+<script src="js/views/GoogleMapsView.js"></script>
+<script src="js/views/DocView.js"></script>
+<script src="js/views/ScratchPadView.js"></script>
+<script src="js/main.js"></script>
+
+<script type="text/javascript">
+    function addStuff() {
+        alert('adding');
+        document.getElementById('content').innerHTML =
+            '<pre class="prettyprint">' +
+            'class Voila {' +
+            'public:' +
+            '// Voila' +
+            'static const string VOILA = "Voila";' +
+            '// will not interfere with embedded tags.' +
+            '</pre>';
+        prettyPrint();
+    }
+</script>
+
+</body>
+
+</html>

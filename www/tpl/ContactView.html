@@ -1,0 +1,57 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+    <div class="page">
+
+        <h2>create()</h2>
+        <div class="description">Returns a new Contact object.</div>
+        <hr/>
+
+    <pre class="prettyprint">
+    var contact = navigator.contacts.create(
+        {
+            name: { givenName: <span class="nocode"><input id="givenName" type="text"/></span>
+                    lastName:  <span class="nocode"><input id="lastName" type="text"/></span> },
+            phoneNumbers: [
+                new ContactField(<span class="nocode"><input id="phoneType1" type="text" placeholder="Type" style="width:70px;"/></span>, <span class="nocode"><input id="phone1" type="text" placeholder="Phone Number" style="width:200px;"/></span>),
+                new ContactField(<span class="nocode"><input id="phoneType2" type="text" placeholder="Type" style="width:70px;"/></span>, <span class="nocode"><input id="phone2" type="text" placeholder="Phone Number" style="width:200px;"/></span>)],
+            emails: [
+                new ContactField(<span class="nocode"><input id="emailType1" type="text" placeholder="Type" style="width:70px;"/></span>, <span class="nocode"><input id="email1" type="text" placeholder="Email Address" style="width:200px;"/></span>),
+                new ContactField(<span class="nocode"><input id="emailType2" type="text" placeholder="Type" style="width:70px;"/></span>, <span class="nocode"><input id="email2" type="text" placeholder="Email Address" style="width:200px;"/></span>)]
+        });
+    contact.save();
+    </pre>
+
+    <a href="#" id="createBtn" class="btn btn-large">Invoke Now</a>
+
+</div>
+
+<div class="page">
+
+<h2>find()</h2>
+<div class="description">Queries the device contacts database and returns one or more Contact objects, each containing the fields specified.</div>
+<hr/>
+
+<pre class="prettyprint">
+navigator.contacts.find(
+    ["id", "name", "phoneNumbers", "emails"],
+    successHandler,
+    errorHandler,
+    {   filter:   "<span class="nocode"><input id="contactSearchKey" type="text"/></span>",
+        multiple:  <span class="nocode"><select id="multiple" style="width:60px;"><option value="true" selected>true</option><option value="false" selected>false</option></select></span>
+    });
+</pre>
+
+<button id="findBtn" type="submit" class="btn btn-large">Invoke Now</button>
+<br/>
+<br/>
+<legend>successHandler()</legend>
+
+<div id="contactWrapper" class="wrapper noscroll" style="position:absolute;top:400px; left:20px; bottom: 40px; right:20px; border: solid 1px #BBBBBB ;overflow: hidden">
+    <ul id="contactList" class="tableview"></ul>
+</div>
+
+</div>
+
+</div>
+</div>

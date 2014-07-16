@@ -1,0 +1,70 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body>
+
+
+
+<div style="position:absolute; top:10px; right:10px; bottom:10px; left:10px">
+    <button onclick="left()" style="position:absolute;left:0px;top:0%">&lt;</button>
+    <button onclick="right()" style="position:absolute;right:0px;top:0%">&gt;</button>
+
+    <div style="position:absolute;left:40px;right:40px;top:0px;bottom:10px;overflow: hidden">
+        <div id="page1" class="transition page stage-center"><h1>Page 1</h1></div>
+        <div id="page2" class="transition page stage-right"><h1>Page 2</h1></div>
+        <div id="page3" class="transition page stage-right"><h1>Page 3</h1></div>
+    </div>
+
+</div>
+
+
+
+
+<script src="../lib/zepto.min.js"></script>
+<script src="../lib/underscore-min.js"></script>
+<script src="../lib/backbone-min.js"></script>
+
+<script type="text/javascript">
+
+    currentIndex = 0;
+    pages = [$('#page1'), $('#page2'), $('#page3')];
+
+    function left() {
+
+        if (currentIndex === 0) return;
+
+        pages[currentIndex].removeClass('stage-center');
+        pages[currentIndex].addClass('stage-right');
+
+        pages[currentIndex - 1].removeClass('stage-left');
+        pages[currentIndex - 1].addClass('stage-center');
+
+        currentIndex = currentIndex - 1;
+
+    }
+
+    function right() {
+
+        if (currentIndex === pages.length - 1) return;
+
+        pages[currentIndex].removeClass('stage-center');
+        pages[currentIndex].addClass('stage-left');
+
+        pages[currentIndex + 1].removeClass('stage-right');
+        pages[currentIndex + 1].addClass('stage-center');
+
+        currentIndex = currentIndex + 1;
+
+    }
+
+    $('.page').swipe(function(){
+        alert('swipe!');
+    });
+
+</script>
+
+
+</body>
+
+</html>

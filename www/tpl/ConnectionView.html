@@ -1,0 +1,66 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+<div class="page">
+
+<h2>Connection</h2>
+<div class="description">Provides access to the device's cellular and wifi connection information.</div>
+<hr/>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th width="40%">Property</th>
+        <th>Description</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>navigator.network.connection.type</td>
+        <td>Active network connection</td>
+        <td><span class="label <%= navigator.network.connection.type === Connection.NONE || navigator.network.connection.type === Connection.UNKNOWN ? 'label-important' : 'label-success' %>"><%= navigator.network.connection.type %></span></td>
+    </tr>
+</table>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th width="40%">Constant</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>Connection.UNKNOWN</td>
+        <td><%= Connection.UNKNOWN %></td>
+    </tr>
+    <tr>
+        <td>Connection.ETHERNET</td>
+        <td><%= Connection.ETHERNET %></td>
+    </tr>
+    <tr>
+        <td>Connection.WIFI</td>
+        <td><%= Connection.WIFI %></td>
+    </tr>
+    <tr>
+        <td>Connection.CELL_2G</td>
+        <td><%= Connection.CELL_2G %></td>
+    </tr>
+    <tr>
+        <td>Connection.CELL_3G</td>
+        <td><%= Connection.CELL_3G %></td>
+    </tr>
+    <tr>
+        <td>Connection.CELL_4G</td>
+        <td><%= Connection.CELL_4G %></td>
+    </tr>
+    <tr>
+        <td>Connection.NONE</td>
+        <td><%= Connection.NONE %></td>
+    </tr>
+</table>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,102 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+<div class="page">
+
+    <h2>getCurrentHeading()</h2>
+    <div class="description">Get the current compass heading.</div>
+    <hr/>
+
+    <pre class="prettyprint">
+navigator.compass.getCurrentHeading(successHandler, errorHandler);
+    </pre>
+
+    <a href='#' class='btn btn-large getBtn'>Invoke Now</a>
+
+    <br/>
+    <br/>
+
+    <legend>successHandler(compassHeading)</legend>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="50%">Property</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tr><td>compassHeading.magneticHeading</td><td id="magneticHeading"></td></tr>
+        <tr><td>compassHeading.trueHeading</td><td id="trueHeading"></td></tr>
+        <tr><td>compassHeading.headingAccuracy</td><td id="headingAccuracy"></td></tr>
+        <tr><td>compassHeading.timestamp</td><td id="headingTimestamp"></td></tr>
+    </table>
+
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--<div style="padding-left: 280px">-->
+        <!--<img id="compass" src="img/compass.png" height="150"/>-->
+    <!--</div>-->
+
+</div>
+
+<div class="page">
+
+    <h2>watchHeading()</h2>
+    <div class="description">At a regular interval, get the compass heading in degrees.</div>
+    <hr/>
+
+    <pre class="prettyprint">
+var watchId = navigator.compass.watchHeading(
+        successHandler,
+        errorHandler,
+        { frequency: <span class="nocode"><select name="watchFrequency" id="watchFrequency" style="width:60px;">
+
+                                  <option value="100">100</option>
+                                  <option value="200" selected>200</option>
+                                  <option value="500">500</option>
+                                  <option value="1000">1000</option>
+                                  <option value="2500">2500</option>
+                                  <option value="5000">5000</option>
+                                  <option value="10000">10000</option>
+                              </select></span>) });</pre>
+
+    <a href='#' class='btn btn-large watchBtn'>Invoke Now</a>&nbsp;&nbsp;&nbsp;<span class="label label-info">watchId: <span id="watchId1">undefined</span></span><br/>
+    <br/>
+    <br/>
+
+    <legend>successHandler(compassHeading)</legend>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="50%">Property</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tr><td>compassHeading.magneticHeading</td><td id="magneticHeading2"></td></tr>
+        <tr><td>compassHeading.trueHeading</td><td id="trueHeading2"></td></tr>
+        <tr><td>compassHeading.headingAccuracy</td><td id="headingAccuracy2"></td></tr>
+        <tr><td>compassHeading.timestamp</td><td id="headingTimestamp2"></td></tr>
+    </table>
+
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--<div style="padding-left: 250px">-->
+        <!--<img id="compass2" src="img/compass.png" height="150"/>-->
+    <!--</div>-->
+
+</div>
+
+<div class="page">
+
+    <h2>clearWatch()</h2>
+    <div class="description">Stop watching the compass referenced by the watch ID parameter.</div>
+    <hr/>
+
+    <pre class="prettyprint">
+navigator.compass.clearWatch(<span id="watchId2">undefined</span>);</pre>
+
+    <a href='#' class='btn btn-large clearBtn'>Invoke Now</a>
+
+</div>
+
+</div>
+</div>

@@ -1,0 +1,36 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+<div class="page">
+    <h2>camera.getPicture()</h2>
+    <div class="description">Provides access to the device's default camera application.</div>
+    <hr/>
+    <pre class="prettyprint">
+navigator.camera.getPicture(successHandler, errorHandler,
+    {   quality:         <span class="nocode"><select id="quality" style="width:80px"><option value="0">0</option><option value="25" selected>25</option><option value="50">50</option></select></span>,
+        sourceType:      <span class="nocode"><select id="sourceType" style="width:380px"><option value="0">Camera.PictureSourceType.PHOTOLIBRARY</option><option value="1" selected>Camera.PictureSourceType.CAMERA</option><option value="2">Camera.PictureSourceType.SAVEDPHOTOALBUM</option></select></span>,
+        destinationType: <span class="nocode"><select id="destinationType" style="width:300px"><option value="0" selected>Camera.DestinationType.DATA_URL  </option><option value="1">Camera.DestinationType.FILE_URI</option></select></span>,
+        encodingType:    <span class="nocode"><select id="encodingType" style="width:250px"><option value="0" selected>Camera.EncodingType.JPEG</option><option value="1">Camera.EncodingType.PNG</option></select></span>
+    });</pre>
+
+    <a href='#' class='btn btn-large getBtn'>Invoke Now</a>
+    <br/>
+    <br/>
+    <img id="image" height="350"/>
+
+</div>
+
+<div class="page">
+    <h2>camera.cleanup()</h2>
+    <div class="description">Cleans up the image files that were taken by the camera, that were stored in a temporary storage location.</div>
+    <hr/>
+
+    <pre class="prettyprint">
+navigator.camera.cleanup( successHandler, errorHandler );</pre>
+
+    <a href='#' class='btn btn-large cleanBtn'>Invoke Now</a>
+
+</div>
+
+</div>
+</div>

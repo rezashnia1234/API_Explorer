@@ -1,0 +1,96 @@
+<div id="pageWrapper" class="page-wrapper">
+    <div class="slider">
+
+        <div class="page">
+            <h2>getCurrentAcceleration()</h2>
+            <div class="description">Get the current acceleration along the x, y, and z axis.</div>
+            <hr/>
+
+            <pre class="prettyprint">navigator.accelerometer.getCurrentAcceleration(
+                successHandler,
+                errorHandler);</pre>
+
+            <a href='#' class='btn btn-large getBtn'>Invoke Now</a>
+
+            <br/>
+            <br/>
+            <br/>
+
+            <legend>successHandler(acceleration)</legend>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th width="50%">Property</th>
+                    <th>Value</th>
+                </tr>
+                </thead>
+                <tr><td>acceleration.x</td><td id="accelerationX1"></td></tr>
+                <tr><td>acceleration.y</td><td id="accelerationY1"></td></tr>
+                <tr><td>acceleration.z</td><td id="accelerationZ1"></td></tr>
+                <tr><td>acceleration.timestamp</td><td id="accelerationTime1"></td></tr>
+            </table>
+
+        </div>
+
+        <div class="page">
+            <h2>watchAcceleration()</h2>
+            <div class="description">At a regular interval, get the acceleration along the x, y, and z axis.</div>
+            <hr/>
+
+            <pre class="prettyprint">
+var watchId = navigator.accelerometer.watchAcceleration(
+                successHandler,
+                errorHandler,
+                { frequency: <span class="nocode"><select name="watchFrequency" id="watchFrequency" style="width:60px;">
+
+                                          <option value="100">100</option>
+                                          <option value="200" selected>200</option>
+                                          <option value="500">500</option>
+                                          <option value="1000">1000</option>
+                                          <option value="2500">2500</option>
+                                          <option value="5000">5000</option>
+                                          <option value="10000">10000</option>
+                                      </select></span>) });</pre>
+
+            <a href='#' class='btn btn-large watchBtn'>Invoke Now</a>&nbsp;&nbsp;&nbsp;<span class="label label-info">watchId: <span id="watchId1">undefined</span></span><br/>
+
+            <br/>
+            <br/>
+            <br/>
+            <legend>successHandler(acceleration)</legend>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th width="50%">Property</th>
+                    <th>Value</th>
+                </tr>
+                </thead>
+                <tr><td>acceleration.x</td><td id="accelerationX2"></td></tr>
+                <tr><td>acceleration.y</td><td id="accelerationY2"></td></tr>
+                <tr><td>acceleration.z</td><td id="accelerationZ2"></td></tr>
+                <tr><td>acceleration.timestamp</td><td id="accelerationTime2"></td></tr>
+            </table>
+
+        </div>
+
+        <div class="page">
+            <h2>clearWatch()</h2>
+            <div class="description">Stop watching the Acceleration referenced by the watch ID parameter.</div>
+            <hr/>
+<pre class="prettyprint">
+navigator.accelerometer.clearWatch(
+    <span id="watchId2">undefined</span>);
+</pre>
+            <a href='#' class='btn btn-large clearBtn'>Invoke Now</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

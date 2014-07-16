@@ -1,0 +1,78 @@
+<div id="pageWrapper" class="page-wrapper">
+<div class="slider">
+
+<div class="page">
+
+    <h2>pause and resume</h2>
+    <div class="description">Triggered respectively when the application is put in the background and comes back to the foreground.</div>
+    <hr/>
+
+<pre class="prettyprint">
+document.addEventListener("pause", onPause, false);
+document.addEventListener("resume", onResume, false);
+</pre>
+<button id="pauseBtn" type="submit" class="btn btn-large">Invoke Now</button>
+<br/>
+<br/>
+<p>Log:</p>
+<textarea id="pauseLog" style="width:100%;height:300px;"></textarea>
+
+</div>
+
+<div class="page">
+
+    <h2>online and offline</h2>
+    <div class="description">Triggered when the app connectivity status changes to online or offline.</div>
+    <hr/>
+
+<pre class="prettyprint">
+document.addEventListener("online", onOnline, false);
+document.addEventListener("offline", onOffline, false);
+</pre>
+    <button id="onlineBtn" type="submit" class="btn btn-large">Invoke Now</button>
+    <br/>
+    <br/>
+    <p>Log:</p>
+    <textarea id="onlineLog" style="width:100%;height:300px;"></textarea>
+
+</div>
+
+<div class="page">
+
+    <h2>battery</h2>
+    <div class="description">Triggered when the device battery status changes.</div>
+    <hr/>
+
+<pre class="prettyprint">
+document.addEventListener("batterystatus", onBatteryStatus, false);
+document.addEventListener("batterylow", onBatteryLow, false);
+document.addEventListener("batterycritical", onBatteryCritical, false);
+</pre>
+    <button id="batteryBtn" type="submit" class="btn btn-large">Invoke Now</button>
+    <br/>
+    <br/>
+    <p>Log:</p>
+    <textarea id="batteryLog" style="width:100%;height:300px;"></textarea>
+
+</div>
+
+<div class="page">
+
+    <h2>startcallbutton and endcallbutton</h2>
+    <div class="description">Triggered respectively whe the device starts and ends a call.</div>
+    <hr/>
+
+<pre class="prettyprint">
+document.addEventListener("startcallbutton", onStartCall, false);
+document.addEventListener("endcallbutton", onEndCall, false);
+</pre>
+    <button id="callBtn" type="submit" class="btn btn-large">Invoke Now</button>
+    <br/>
+    <br/>
+    <p>Log:</p>
+    <textarea id="callLog" style="width:100%;height:300px;"></textarea>
+
+</div>
+
+</div>
+</div>

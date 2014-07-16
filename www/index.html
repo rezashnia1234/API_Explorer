@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="lib/prettify.js"></script>
+
+</head>
+
+<body>
+
+<div class="header-wrapper">
+    <div class="header header-left">
+        <a id="backButton" style="display: none;" class="header-button header-button-left header-back-button" href="javascript:$('#listContainer').css('left', '0px');$('#backButton').hide();">
+            <button>Back</button>
+        </a>
+        <h1>APIs</h1>
+    </div>
+    <div class="header header-right">
+        <h1 id='title'>PhoneGap API Explorer</h1>
+    </div>
+</div>
+
+
+<div id="sidebar">
+
+    <div id="listContainer" class="transition">
+
+        <div id="mainList" class="wrapper">
+            <ul class="tableview tableview-links"></ul>
+        </div>
+
+        <div id="subList" class="wrapper">
+            <ul class="tableview tableview-links"></ul>
+        </div>
+
+    </div>
+
+</div>
+
+<img src="img/logo.png" width="100" style="position:absolute;bottom:10px;right: 10px;z-index: 1"/>
+
+<div id="content">
+    <div style="padding:40px;">
+        <img src="img/welcome.png"/>
+    </div>
+</div>
+
+<script src="lib/cordova-1.9.0.js"></script>
+<script src="lib/jquery-1.7.2.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<script src="lib/iscroll.js"></script>
+<script src="lib/twis.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmMR8OYLclNRNyYntpC0RUAekx7k0nwj8&sensor=true"></script>
+
+<script src="js/utils.js"></script>
+<script src="js/views/PagedView.js"></script>
+<script src="js/models/models.js"></script>
+<script src="js/views/APIListView.js"></script>
+<script src="js/views/AccelerometerView.js"></script>
+<script src="js/views/GeolocationView.js"></script>
+<script src="js/views/CameraView.js"></script>
+<script src="js/views/DeviceView.js"></script>
+<script src="js/views/CaptureView.js"></script>
+<script src="js/views/CompassView.js"></script>
+<script src="js/views/ConnectionView.js"></script>
+<script src="js/views/ContactView.js"></script>
+<script src="js/views/EventsView.js"></script>
+<script src="js/views/NotificationView.js"></script>
+<script src="js/views/DatabaseView.js"></script>
+<script src="js/views/FileView.js"></script>
+<script src="js/views/DocView.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
